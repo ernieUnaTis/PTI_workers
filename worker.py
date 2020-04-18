@@ -24,7 +24,7 @@ def callback(ch, method, properties, body):
     producer = KafkaProducer()
     ack = producer.send(topicName,  value=body)
     metadata = ack.get()
-    #print(metadata.topic)
+    print("Inyeccion a Kafka Correcta")
     #print(metadata.partition)
 
 

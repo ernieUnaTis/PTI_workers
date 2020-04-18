@@ -19,6 +19,7 @@ class MyListener(stomp.ConnectionListener):
         producer = KafkaProducer()
         ack = producer.send(topicName,  value=message.encode())
         metadata = ack.get()
+        print("Inyeccion a Kafka Correcta desde AMQ" )
 
 
 print("AQUI")
@@ -34,6 +35,7 @@ for message in read_messages:
     producer = KafkaProducer()
     ack = producer.send(topicName,  value=message.encode())
     metadata = ack.get()
+    print("Inyeccion a Kafka Correcta 2")
 #conn.send(body='Test from Python', destination='/queue/SAMPLEQUEUE')
 time.sleep(2)
 conn.disconnect()
